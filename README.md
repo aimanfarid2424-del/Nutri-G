@@ -200,30 +200,6 @@ During development, the following project prompt was used to define the behavior
 
 ---
 
-## BMI Calculator
-
-![BMI Calculator](screenshots/bmi-calculator.png)
-
----
-
-## Daily Water Intake Calculator
-
-![Water Intake](screenshots/water-intake.png)
-
----
-
-## Healthy Nutrition Tips
-
-![Nutrition Tips](screenshots/nutrition-tips.png)
-
----
-
-## About Page
-
-![About Page](screenshots/about.png)
-
----
-
 # ▶️ How to Run the Project
 
 ## 1. Clone the repository
