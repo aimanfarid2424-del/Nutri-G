@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "NutriGuide AI"
+version = "1.0.0"
+id = "artifacts/nutriguide-ai"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18432
+
+[services.development]
+run = "pnpm --filter @workspace/nutriguide-ai run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/nutriguide-ai", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/nutriguide-ai/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18432"
+BASE_PATH = "/"

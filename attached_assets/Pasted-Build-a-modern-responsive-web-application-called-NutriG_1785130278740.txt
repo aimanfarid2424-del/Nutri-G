@@ -1,0 +1,88 @@
+Build a modern, responsive web application called "NutriGuide AI".
+
+Purpose:
+NutriGuide AI is an AI-powered nutrition assistant that helps students, families, and health-conscious individuals analyze their meals and receive personalized nutrition guidance. The app should have a clean, professional, and modern interface with green and white colors inspired by healthcare and nutrition.
+
+The application should include the following pages and features:
+
+1. Home Page
+- Attractive hero section
+- App description
+- Feature cards
+- Call-to-action button: "Analyze My Meal"
+- Modern responsive navigation bar
+- Footer with developer information
+
+2. AI Meal Analyzer (Main Feature)
+Users can:
+- Select a health goal:
+  - Weight Loss
+  - Weight Gain
+  - High Protein
+  - Diabetes Friendly
+  - Heart Healthy
+- Enter what they ate during the day.
+- Click "Analyze Meal".
+
+Use the Gemini API to provide:
+- Meal Health Score (0–10)
+- Nutritional strengths
+- Nutritional weaknesses
+- Missing nutrients
+- Estimated calories (approximate)
+- Protein, carbohydrates, and fat overview
+- Affordable healthier alternatives suitable for Pakistani diets
+- One personalized nutrition tip
+
+The AI should never diagnose diseases or prescribe medication. Responses should be evidence-based, encouraging, and easy to understand.
+
+3. BMI Calculator
+Inputs:
+- Height
+- Weight
+
+Display:
+- BMI value
+- BMI category
+- Simple explanation
+- Healthy recommendation
+
+4. Daily Water Intake Calculator
+Inputs:
+- Weight
+- Activity level
+
+Display:
+- Recommended daily water intake
+- Hydration tip
+
+5. Healthy Nutrition Tips Page
+Display 15–20 useful nutrition tips in attractive cards.
+
+6. About Page
+Explain:
+- Why NutriGuide AI was created
+- The real problem it solves
+- Who can use it
+- Disclaimer that it is for educational purposes only and not medical advice.
+
+Design Requirements
+- Beautiful modern UI
+- Mobile responsive
+- Green and white healthcare theme
+- Rounded cards
+- Soft shadows
+- Smooth animations
+- Professional icons
+- Easy-to-read typography
+
+Technical Requirements
+- Build using React and Tailwind CSS.
+- Organize the project into reusable components.
+- Prepare the AI integration so a Gemini API key can be added later through an environment variable.
+- Do NOT hardcode API keys.
+- Include loading indicators and friendly error messages.
+- Validate user inputs before calculations.
+- Keep the code clean, modular, and well-commented.
+
+The final application should look polished, professional, and ready for deployment on Vercel and publishing on GitHub.
