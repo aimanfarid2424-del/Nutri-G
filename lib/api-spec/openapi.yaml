@@ -3,13 +3,15 @@ info:
   # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: API specification for NutriGuide AI
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
     description: Health operations
+  - name: nutrition
+    description: Nutrition AI operations
 paths:
   /healthz:
     get:
@@ -24,6 +26,36 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /meal-analysis:
+    post:
+      operationId: analyzeMeal
+      tags: [nutrition]
+      summary: Analyze a meal using Gemini AI
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/MealInput"
+      responses:
+        "200":
+          description: Meal analysis result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MealAnalysis"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +65,75 @@ components:
           type: string
       required:
         - status
-
+    MealInput:
+      type: object
+      required:
+        - mealDescription
+        - healthGoal
+      properties:
+        mealDescription:
+          type: string
+          minLength: 1
+          description: What the user ate during the day
+        healthGoal:
+          type: string
+          description: "User's health goal: weight_loss, weight_gain, high_protein, diabetes_friendly, heart_healthy"
+    MealAnalysis:
+      type: object
+      required:
+        - healthScore
+        - strengths
+        - weaknesses
+        - missingNutrients
+        - estimatedCalories
+        - protein
+        - carbohydrates
+        - fat
+        - alternatives
+        - tip
+      properties:
+        healthScore:
+          type: number
+          description: Meal health score from 0 to 10
+        strengths:
+          type: array
+          items:
+            type: string
+          description: Nutritional strengths of the meal
+        weaknesses:
+          type: array
+          items:
+            type: string
+          description: Nutritional weaknesses of the meal
+        missingNutrients:
+          type: array
+          items:
+            type: string
+          description: Nutrients that are missing or insufficient
+        estimatedCalories:
+          type: string
+          description: Approximate calorie count
+        protein:
+          type: string
+          description: Protein overview
+        carbohydrates:
+          type: string
+          description: Carbohydrates overview
+        fat:
+          type: string
+          description: Fat overview
+        alternatives:
+          type: array
+          items:
+            type: string
+          description: Affordable healthier alternatives suitable for Pakistani diets
+        tip:
+          type: string
+          description: One personalized nutrition tip
+    ApiError:
+      type: object
+      required:
+        - error
+      properties:
+        error:
+          type: string

@@ -5,19 +5,6 @@
  * API specification for NutriGuide AI
  * OpenAPI spec version: 0.1.0
  */
-export interface HealthStatus {
-  status: string;
-}
-
-export interface MealInput {
-  /**
-     * What the user ate during the day
-     * @minLength 1
-     */
-  mealDescription: string;
-  /** User's health goal: weight_loss, weight_gain, high_protein, diabetes_friendly, heart_healthy */
-  healthGoal: string;
-}
 
 export interface MealAnalysis {
   /** Meal health score from 0 to 10 */
@@ -41,8 +28,3 @@ export interface MealAnalysis {
   /** One personalized nutrition tip */
   tip: string;
 }
-
-export interface ApiError {
-  error: string;
-}
-
