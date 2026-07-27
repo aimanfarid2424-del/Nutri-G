@@ -162,18 +162,41 @@ During development, the following project prompt was used to define the behavior
 - Replit Deployment
 
 ---
-
 # 📸 Screenshots
 
 ## Home Page
 
-![Home Page](screenshots/home.png)
+![Home Page](Screenshot_20260727_170301.jpg)
 
 ---
 
 ## AI Meal Analyzer
 
-![Meal Analyzer](screenshots/meal-analyzer.png)
+![Meal Analyzer](Screenshot_20260727_170309.jpg)
+
+---
+
+## BMI Calculator
+
+![BMI Calculator](Screenshot_20260727_170315.jpg)
+
+---
+
+## Daily Water Intake Calculator
+
+![Water Intake](Screenshot_20260727_170319.jpg)
+
+---
+
+## Healthy Nutrition Tips
+
+![Nutrition Tips](Screenshot_20260727_170329.jpg)
+
+---
+
+## About Page
+
+![About Page](Screenshot_20260727_170333.jpg)
 
 ---
 
